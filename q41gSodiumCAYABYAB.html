@@ -10,14 +10,23 @@
 
     <p>Title:</p>
     <input id = "genre" type = text> </input>
+
+    <button onclick="addMovie()">Add Movie</button>
     
     <script>
-      const movie_information = {};
+  const movie_information = {};
       movie_information.title = document.GetElementById("movie title");
       movie_information.year = document.GetElementById("year");
       movie_information.genre = document.GetElementById("genre");
 
-      localStorage.setItem("info", JSON.stringify("movie_information"));
+      
+      
+      function addMovie (){
+localStorage.setItem("info", JSON.stringify("movie_information"));
+        localStorage.getItem("info", JSON.stringify("movie_information"));
+        
+      };
+    
     </script>
   </body>
 </html>
