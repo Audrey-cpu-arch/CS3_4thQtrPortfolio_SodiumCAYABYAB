@@ -18,12 +18,12 @@
       movie_information.title = document.GetElementById("movie title");
       movie_information.year = document.GetElementById("year");
       movie_information.genre = document.GetElementById("genre");
-
       
       
       function addMovie (){
 localStorage.setItem("info", JSON.stringify("movie_information"));
-        localStorage.getItem("info", JSON.stringify("movie_information"));
+let output = JSON.parse(localStorage.getItem("info", JSON.stringify("movie_information")));
+console.log("output");
         
       };
     
