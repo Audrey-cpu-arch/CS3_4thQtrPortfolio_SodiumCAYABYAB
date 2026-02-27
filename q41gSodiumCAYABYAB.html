@@ -41,7 +41,7 @@ h2 {
         </select>
 
     <h2> Movie List</h2>
-    <span> </span>
+     <p id = "movie" ></p>
 
     <button onclick="addMovie()">Add Movie</button>
     
@@ -55,7 +55,10 @@ h2 {
       function addMovie (){
 localStorage.setItem("info", JSON.stringify("movie_information"));
 
-document.getElementById("span").innerHTML =  JSON.parse(localStorage.getItem("info", JSON.stringify("movie_information")));
+
+
+        return movie_information;
+            document.getElementById('movie').textContent = movie_information.title + "(" + movie_information.year + ")" + " " + - + " " + movie_information.genre.text;
         
       };
     
