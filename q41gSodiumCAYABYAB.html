@@ -12,9 +12,12 @@
     <input id = "genre" type = text> </input>
     
     <script>
-      const movie = document.GetElementById("movie title");
-      const year = document.GetElementById("year");
-       const genre = document.GetElementById("genre");
+      const movie_information = {};
+      movie_information.title = document.GetElementById("movie title");
+      movie_information.year = document.GetElementById("year");
+      movie_information.genre = document.GetElementById("genre");
+
+      localStorage.setItem("info", JSON.stringify("movie_information"));
     </script>
   </body>
 </html>
