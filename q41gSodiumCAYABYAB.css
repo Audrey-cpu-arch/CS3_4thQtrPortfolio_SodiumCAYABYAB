@@ -5,3 +5,9 @@ h1{
 h2{
  text-align: center;
 }
+
+.button {
+ background-color:blue;
+ position: static;
+ 
+}
