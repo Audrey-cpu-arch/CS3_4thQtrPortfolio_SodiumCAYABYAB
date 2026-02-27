@@ -8,8 +8,23 @@
     <p>Year:</p>
     <input id = "year" type = text> </input>
 
-    <p>Title:</p>
-    <input id = "genre" type = text> </input>
+    <p>Genre:</p>
+      <select id = "genre" required>
+            <option value = "action"> action </option>
+            <option value = "adventure"> adventure </option>
+            <option value = "comedy"> comedy </option>
+            <option value = "drama"> drama </option>
+            <option value = "fantasy"> fantasy </option>
+            <option value = "horror"> horror </option>
+            <option value = "mystery" > mystery </option>
+            <option value = "romance"> romance </option>
+            <option value = "thriller"> thrillder </option>
+            <option value = "science fiction"> science fiction </option>
+            <option value = "western"> western </option>
+            <option value = "sports"> sports </option>
+            <option value = "musical"> musical </option>
+            <option value = "other"> Other genre that isn't mentioned in the list </option>
+        </select>
 
     <button onclick="addMovie()">Add Movie</button>
     
