@@ -25,6 +25,7 @@
             <option value = "musical"> musical </option>
             <option value = "other"> Other genre that isn't mentioned in the list </option>
         </select>
+    <span> </span>
 
     <button onclick="addMovie()">Add Movie</button>
     
@@ -37,8 +38,8 @@
       
       function addMovie (){
 localStorage.setItem("info", JSON.stringify("movie_information"));
-let output = JSON.parse(localStorage.getItem("info", JSON.stringify("movie_information")));
-console.log("output");
+
+document.getElementById("span").innerHTML =  JSON.parse(localStorage.getItem("info", JSON.stringify("movie_information")));
         
       };
     
