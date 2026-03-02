@@ -11,10 +11,10 @@
   <body>
     <h1> Add a Movie</h1>
     <p>Title:</p>
-    <input id = "movie title" type = text> </input>
+    <input id = "movie title" type = "text"> 
 
     <p>Year:</p>
-    <input id = "year" type = number> </input>
+    <input id = "year" type = "number"> 
 
     <p>Genre:</p>
       <select id = "genre" required>
@@ -34,23 +34,25 @@
             <option value = "other"> Other genre that isn't mentioned in the list </option>
         </select>
 
+
+           <button onclick="addMovie()">Add Movie</button>
     <h2> Movie List</h2>
      <p id = "movie" ></p>
 
-    <button onclick="addMovie()">Add Movie</button>
+ 
     
     <script>
-  const movie_information = {};
-      movie_information.title = document.getElementById("movie title").value;
-      movie_information.year = document.getElementById("year").value;
-      movie_information.genre = document.getElementById("genre").value;
+  
       
       
       function addMovie (){
-localStorage.setItem("info", JSON.stringify("movie_information"));
-let output = JSON.parse(info);
+const movie_information = {};
+      movie_information.title = document.getElementById("movie title").value;
+      movie_information.year = document.getElementById("year").value;
+      movie_information.genre = document.getElementById("genre").value;
 
-return output.title + "(" + output.year + ")" + " " + - + " " + output.genre;
+localStorage.setItem("info", JSON.stringify(movie_information));
+document.getElementById("movie").innerHTML = movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre;
         
       };
     
