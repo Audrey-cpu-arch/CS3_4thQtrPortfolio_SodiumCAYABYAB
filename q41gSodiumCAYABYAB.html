@@ -14,7 +14,7 @@
     <input id = "movie title" type = text> </input>
 
     <p>Year:</p>
-    <input id = "year" type = text> </input>
+    <input id = "year" type = number> </input>
 
     <p>Genre:</p>
       <select id = "genre" required>
@@ -50,8 +50,7 @@
 localStorage.setItem("info", JSON.stringify("movie_information"));
 let output = JSON.parse(info);
 
-
-        document.getElementById('movie').textContent = output.title + "(" + output.year + ")" + " " + - + " " + output.genre.text;
+return output.title + "(" + output.year + ")" + " " + - + " " + output.genre;
         
       };
     
