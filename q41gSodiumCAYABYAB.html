@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -47,11 +48,10 @@
       
       function addMovie (){
 localStorage.setItem("info", JSON.stringify("movie_information"));
+let output = JSON.parse(info);
 
 
-
-        return info;
-        document.getElementById('movie').textContent = movie_information.title + "(" + movie_information.year + ")" + " " + - + " " + movie_information.genre.text;
+        document.getElementById('movie').textContent = output.title + "(" + output.year + ")" + " " + - + " " + output.genre.text;
         
       };
     
