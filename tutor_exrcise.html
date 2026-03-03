@@ -1,0 +1,36 @@
+/ --- 1. THE SAVE FUNCTION ---
+// This should take a title and year, and add it to the existing list.
+function saveMovie(title, year) {
+    // A. Get existing data (hint: JSON.parse)
+    let library = JSON.parse(localStorage.getItem("movieDB")) || [];
+
+    // B. Create the new movie object
+    const newMovie = {
+        id: Date.now(),
+        title: title,
+        year: year
+    };
+
+    // C. Add to array and save back to localStorage
+    // [YOUR CODE HERE]
+    
+    console.log(`Saved: ${title}`);
+}
+
+// --- 2. THE GET FUNCTION ---
+// This should return the array of movies so other parts of a program can use it.
+function getAllMovies() {
+    // [YOUR CODE HERE: Return the parsed array from localStorage]
+}
+
+// --- 3. THE DELETE FUNCTION ---
+// This should remove ONE movie based on its unique ID.
+function removeMovieById(idToRemove) {
+    let library = JSON.parse(localStorage.getItem("movieDB")) || [];
+
+    // Filter the library to keep everything EXCEPT the idToRemove
+    // [YOUR CODE HERE: library = library.filter(...)]
+
+    // Save the filtered list back
+    localStorage.setItem("movieDB", JSON.stringify(library));
+}

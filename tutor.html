@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="q41gSodiumCAYABYAB.css">
+</head>
+
+
+  
+  <body>
+    <h1> Add a Movie</h1>
+    <p>Title:</p>
+    <input id = "movie title" type = "text"> 
+
+    <p>Year:</p>
+    <input id = "year" type = "number"> 
+
+    <p>Genre:</p>
+      <select id = "genre" required>
+            <option value = "action"> action </option>
+            <option value = "adventure"> adventure </option>
+            <option value = "comedy"> comedy </option>
+            <option value = "drama"> drama </option>
+            <option value = "fantasy"> fantasy </option>
+            <option value = "horror"> horror </option>
+            <option value = "mystery" > mystery </option>
+            <option value = "romance"> romance </option>
+            <option value = "thriller"> thrillder </option>
+            <option value = "science fiction"> science fiction </option>
+            <option value = "western"> western </option>
+            <option value = "sports"> sports </option>
+            <option value = "musical"> musical </option>
+            <option value = "other"> Other genre that isn't mentioned in the list </option>
+        </select>
+
+<p> Rating:</p>
+
+<div class="ratings">
+<input type = "radio" id = "rating1" value = "1" name = "rating"> 
+</div>
+<label for = "rating1"> ★ </label>
+
+<div class="ratings">
+<input type = "radio" id = "rating2" value = "2" name = "rating">
+</div>
+<label for = "rating2"> ★ </label>
+
+<div class="ratings">
+<input type = "radio" id = "rating3" value = "3" name = "rating">
+</div>
+<label for = "rating3"> ★ </label>
+
+<div class="ratings">
+<input type = "radio" id = "rating4" value = "4" name = "rating">
+</div>
+<label for = "rating4"> ★ </label>
+
+<div class="ratings">
+<input type = "radio" id = "rating5" value = "5" name = "rating">
+</div>
+<label for = "rating5"> ★ </label>
+
+<br>
+           <button onclick="addMovie()" class = "button" >Add Movie</button>
+    <h2> Movie List</h2>
+     <p id = "movie" ></p>
+
+ 
+    
+    <script>
+let title = document.getElementById("movie title");
+let year = document.getElementById("year");
+function saveMovie(title, year){
+    const movie_year = {};
+    movie_year.title = title;
+    movie_year.year = year;
+    localStorage.setItem("movieDB", JSON.stringify(movie_year));
+     let library = JSON.parse(localStorage.getItem("movieDB"));
+}
+
+    
+    </script>
+  </body>
+</html>
