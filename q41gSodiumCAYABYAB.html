@@ -36,13 +36,32 @@
 
 <p> Rating:</p>
 
-<input type = "radio" id = "rating1" value = "1" name = "rating">
+<div class="ratings">
+<input type = "radio" id = "rating1" value = "1" name = "rating"> 
+</div>
+<label for = "rating1"> ★ </label>
+
+<div class="ratings">
 <input type = "radio" id = "rating2" value = "2" name = "rating">
+</div>
+<label for = "rating2"> ★ </label>
+
+<div class="ratings">
 <input type = "radio" id = "rating3" value = "3" name = "rating">
+</div>
+<label for = "rating3"> ★ </label>
+
+<div class="ratings">
 <input type = "radio" id = "rating4" value = "4" name = "rating">
+</div>
+<label for = "rating4"> ★ </label>
+
+<div class="ratings">
 <input type = "radio" id = "rating5" value = "5" name = "rating">
+</div>
+<label for = "rating5"> ★ </label>
 
-
+<br>
            <button onclick="addMovie()" class = "button" >Add Movie</button>
     <h2> Movie List</h2>
      <p id = "movie" ></p>
@@ -59,9 +78,10 @@ const movie_information = {};
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
 
       
+      
 
 localStorage.setItem("info", JSON.stringify(movie_information));
-document.getElementById("movie").innerHTML = movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre +",Rating:";
+document.getElementById("movie").innerHTML = movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre +",Rating:" + movie_information.rating;
         
       };
     

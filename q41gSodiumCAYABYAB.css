@@ -15,16 +15,25 @@ margin-left: 200px;}
 .button {
  background-color: dodgerblue;
  color: white;
- position: stattic;
+
  text-align: center;
- margin-left: 400px;
- margin-right: 400px:
+
+padding-right: 100px;
+padding-left: 100px;
  font-size: 30px;
+ border-radius: 20px;
+ display:inline;
+
  
 }
 
 body{
- font-family: "Trebuchet MS"
+ font-family: "Trebuchet MS";
  font-size: 20px;
+}
+
+
+.ratings{
+  display:none;
 }
 
