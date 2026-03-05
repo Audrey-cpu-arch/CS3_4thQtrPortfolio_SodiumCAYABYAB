@@ -12,18 +12,15 @@ h2{
 
 
 .button {
- background-color: dodgerblue;
- color: white;
-
- text-align: center;
-
+background-color: dodgerblue;
+color: white;
+text-align: center;
 width: 20%;
 font-size: 30px;
-
 border-radius: 13px 13px 13px 13px;
 
-position:fixed;
 margin-left:1200px;
+margin-bottom:50px;
 
  
 }
@@ -31,6 +28,7 @@ margin-left:1200px;
 body{
  font-family: "Trebuchet MS";
  font-size: 20px;
+ 
 }
 
 
@@ -55,4 +53,12 @@ body{
   padding-top: 50px;
   padding-bottom:50px;
   margin-left:40px;
+}
+
+#movie-list{
+  padding-top: 50px;
+}
+
+#movie {
+  text-align:center;
 }
