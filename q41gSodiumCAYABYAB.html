@@ -9,15 +9,17 @@
 
   
   <body>
+
+    
     <h1> Add a Movie</h1>
 
 
-    <div id = "movie title-label">
+    <div id = "movie-title">
     <p>Title:</p>
     <input id = "movie title" type = "text"> 
 </div>
 
-<div id = "movie year-label">
+<div id = "movie-year">
     <p>Year:</p>
     <input id = "year" type = "number"> 
 </div>
@@ -48,6 +50,7 @@
 <div class="ratings">
 <input type = "radio" id = "rating1" value = "1" name = "rating"> 
 </div>
+
 <label for = "rating1"> ★ </label>
 
 <div class="ratings">
@@ -90,7 +93,7 @@ const movie_information = {};
       movie_information.genre = document.getElementById("genre").value;
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
 localStorage.setItem("info", JSON.stringify(movie_information));
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre +",Rating:" + movie_information.rating + "<br>";
+document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + movie_information.genre + " " +",Rating:" + movie_information.rating + "<br>";
         
       };
     

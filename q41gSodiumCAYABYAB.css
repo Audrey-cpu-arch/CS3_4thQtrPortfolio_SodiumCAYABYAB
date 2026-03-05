@@ -21,6 +21,7 @@ border-radius: 13px 13px 13px 13px;
 
 margin-left:1200px;
 margin-bottom:50px;
+margin-top:200px;
 
  
 }
@@ -49,11 +50,19 @@ body{
   
 }
 
-#genre-label, #rating-label, #movie title-label, #movie year-label{
+#genre-label, #rating-label, #movie-title, #movie-year{
   padding-top: 50px;
   padding-bottom:50px;
   margin-left:40px;
+  background-color:white;
+  border: 2px solid lavender;
+  border-radius: 20px 20px 20px 20px;
+ 
+
 }
+
+
+
 
 #movie-list{
   padding-top: 50px;
