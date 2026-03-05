@@ -47,6 +47,7 @@ height: 60px;
 
 body{
   font-weight: bold;
+  background-color: white;
   
 }
 
@@ -55,14 +56,20 @@ body{
   padding-bottom:50px;
   margin-left:40px;
   background-color:white;
-  border: 2px solid lavender;
+  border: 2px solid rgb(218, 183, 250);
   border-radius: 20px 20px 20px 20px;
  
 
 }
 
 
-
+input{
+  width: 90%;
+  box-sizing:border-box;
+  margin-left: 20px;
+border-radius: 10px 10px 15px 15px;
+height: 60px;
+}
 
 #movie-list{
   padding-top: 50px;
@@ -71,3 +78,4 @@ body{
 #movie {
   text-align:center;
 }
+
