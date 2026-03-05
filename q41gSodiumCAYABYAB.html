@@ -10,12 +10,19 @@
   
   <body>
     <h1> Add a Movie</h1>
+
+
+    <div id = "movie title-label">
     <p>Title:</p>
     <input id = "movie title" type = "text"> 
+</div>
 
+<div id = "movie year-label">
     <p>Year:</p>
     <input id = "year" type = "number"> 
+</div>
 
+    <div id = "genre-label"> 
     <p>Genre:</p>
       <select id = "genre" required>
             <option value = "action"> action </option>
@@ -33,7 +40,9 @@
             <option value = "musical"> musical </option>
             <option value = "other"> Other genre that isn't mentioned in the list </option>
         </select>
+    </div>
 
+<div id = "rating-label">
 <p> Rating:</p>
 
 <div class="ratings">
@@ -61,28 +70,25 @@
 </div>
 <label for = "rating5"> ★ </label>
 
+</div>
+
 <br>
            <button onclick="addMovie()" class = "button" >Add Movie</button>
     <h2> Movie List</h2>
+    
      <p id = "movie" ></p>
 
  
     
     <script>
-
-
       function addMovie (){
 const movie_information = {};
       movie_information.title = document.getElementById("movie title").value;
       movie_information.year = document.getElementById("year").value;
       movie_information.genre = document.getElementById("genre").value;
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
-
-      
-      
-
 localStorage.setItem("info", JSON.stringify(movie_information));
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre +",Rating:" + movie_information.rating;
+document.getElementById("movie").innerHTML += "<br>" +movie_information.title + "(" + movie_information.year + ")" + " " + movie_information.genre +",Rating:" + movie_information.rating + "<br>";
         
       };
     
