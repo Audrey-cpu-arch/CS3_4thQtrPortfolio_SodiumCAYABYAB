@@ -37,7 +37,7 @@ body{
   display:none;
 }
 
-input{
+.ratings{
   width: 90%;
   box-sizing:border-box;
   margin-left: 20px;
