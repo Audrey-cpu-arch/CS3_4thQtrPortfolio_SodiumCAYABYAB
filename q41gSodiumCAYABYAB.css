@@ -79,3 +79,6 @@ height: 60px;
   text-align:center;
 }
 
+.clicked_star{
+  background: url("clicked_1.png");
+}
