@@ -95,18 +95,9 @@
     
     <script>
 
-      let values_and_length = [];
+      
 
- var star1 = document.getElementById("rating1").value;
-     star1 = 1;
- var star2 = document.getElementById("rating2").value;
-      star2 = 2;
- var star3 = document.getElementById("rating3").value; 
-      star3 = 3;
- var star4 = document.getElementById("rating4").value;
-      star4 = 4;
- var star5 = document.getElementById("rating5").value;
-      star5 = 5;
+    
 
 
 
@@ -129,7 +120,17 @@ document.getElementById("movie").innerHTML += "<br>" +movie_information.title + 
       localStorage.removeItem("info");
       
 }};
-    
+
+
+        //for gettinf the average based on stars
+        let starting_point = 0;
+        function average () {
+        let values_and_length = [];
+        let length_of_array = values_and_length.length;
+        starting_point+=document.querySelector('input[name="rating"]:checked').value;
+        values_and_length.push(starting_point);
+        let averaged = values_and_length/length_of_array;
+      }
 
 
       };
