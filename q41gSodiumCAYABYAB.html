@@ -96,14 +96,10 @@
  document.getElementById("rating1").addEventListener("click", function(star1){
 star1.target.classList.toggle("clicked_star");
  });
-
-
-
-
  var star2 = document.getElementById("rating2");
  var star3 = document.getElementById("rating3"); 
  var star4 = document.getElementById("rating4");
-var star5 = document.getElementById("rating5");
+ var star5 = document.getElementById("rating5");
 
 
 
@@ -118,9 +114,10 @@ const movie_information = {};
       movie_information.genre = document.getElementById("genre").value;
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
 localStorage.setItem("info", JSON.stringify(movie_information));
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " +"<button onclick='deleteMovie()'> Delete </button>" + "<br>";
+document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button onclick='deleteMovie()'> Delete </button>" + "<br>";
 
 function deleteMovie(){
+  delete movie_information.title;
   localStorage.removeItem("info");
 }
         
