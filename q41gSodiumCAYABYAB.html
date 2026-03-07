@@ -107,7 +107,7 @@ function ChangefirstStar() {
  var star4 = document.getElementById("rating4");
  var star5 = document.getElementById("rating5");
 
-
+document.getElementById("deleteMovie").addEventListener("click", deleteMovie);
       function deleteMovie(){
 
   if (confirm("Are you sure you want to delete this movie?") == true) {
@@ -116,6 +116,7 @@ function ChangefirstStar() {
       document.getElementById("movie").innerHTML += "<br>" + " " + "<br>"
 }};
 
+      
 
 
       function addMovie (){
@@ -130,7 +131,8 @@ document.getElementById("movie").innerHTML += "<br>" +movie_information.title + 
  
       
     
-document.getElementById("deleteMovie").addEventListener("click", deleteMovie);
+
+
       };
     
     </script>
