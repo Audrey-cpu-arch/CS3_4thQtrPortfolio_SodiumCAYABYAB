@@ -107,14 +107,7 @@ function ChangefirstStar() {
  var star4 = document.getElementById("rating4");
  var star5 = document.getElementById("rating5");
 
-document.getElementById("deleteMovie").addEventListener("click", deleteMovie);
-      function deleteMovie(){
 
-  if (confirm("Are you sure you want to delete this movie?") == true) {
-      
-      localStorage.removeItem("info");
-      document.getElementById("movie").innerHTML += "<br>" + " " + "<br>"
-}};
 
       
 
@@ -129,7 +122,12 @@ const movie_information = {};
 localStorage.setItem("info", JSON.stringify(movie_information));
 document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie'> Delete </button>" +  "<br>";
  
+      document.getElementById("deleteMovie").addEventListener("click", deleteMovie);
+      function deleteMovie(){
+  if (confirm("Are you sure you want to delete this movie?") == true) {  
+      localStorage.removeItem("info");
       
+}};
     
 
 
