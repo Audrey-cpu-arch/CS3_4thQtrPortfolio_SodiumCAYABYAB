@@ -127,9 +127,10 @@ document.getElementById("movie").innerHTML += "<br>" +movie_information.title + 
 document.getElementById("deleteMovie").addEventListener("click", deleteMovie);
 
 
-function deleteMovie(){
+function deleteMovie(localStorage.getItem("info)){
 
   if (confirm("Are you sure you want to delete this movie?") == true) {
+      
       localStorage.removeItem("info");
 }}
       };
