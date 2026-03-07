@@ -29,20 +29,20 @@
     <div id = "genre-label"> 
     <p>Genre:</p>
       <select id = "genre" required>
-            <option value = "action"> Action </option>
-            <option value = "adventure"> Adventure </option>
-            <option value = "comedy"> Comedy </option>
-            <option value = "drama"> Drama </option>
-            <option value = "fantasy"> Fantasy </option>
-            <option value = "horror"> Horror </option>
-            <option value = "mystery" > Mystery </option>
-            <option value = "romance"> Romance </option>
-            <option value = "thriller"> Thriller </option>
-            <option value = "science fiction"> Science Fiction </option>
-            <option value = "western"> Western </option>
-            <option value = "sports"> Sports </option>
-            <option value = "musical"> Musical </option>
-            <option value = "other"> Other genre that isn't mentioned in the list </option>
+            <option value = "Action"> Action </option>
+            <option value = "Adventure"> Adventure </option>
+            <option value = "Comedy"> Comedy </option>
+            <option value = "Drama"> Drama </option>
+            <option value = "Fantasy"> Fantasy </option>
+            <option value = "Horror"> Horror </option>
+            <option value = "Mystery" > Mystery </option>
+            <option value = "Romance"> Romance </option>
+            <option value = "Thriller"> Thriller </option>
+            <option value = "Science Fiction"> Science Fiction </option>
+            <option value = "Western"> Western </option>
+            <option value = "Sports"> Sports </option>
+            <option value = "Musical"> Musical </option>
+            <option value = "Other"> Other genre that isn't mentioned in the list </option>
         </select>
     </div>
 
@@ -52,28 +52,28 @@
 <p> Rating:</p>
 
 <div class="ratings">
-<input type = "radio" id = "rating1" value = "1" name = "rating"> 
+<input type = "radio" id = "rating1" value = "⭐" name = "rating"> 
 </div>
 
-<label for = "rating1"> <img src = "/assets/unclicked_1.png" width ="20" height = "20"></label>
+<label for = "rating1" id = "first_rating" onclick = "ChangefirstStar()"> <img src = "/assets/unclicked_1.png" width ="20" height = "20"></label>
 
 <div class="ratings">
-<input type = "radio" id = "rating2" value = "2" name = "rating">
+<input type = "radio" id = "rating2" value = "⭐⭐" name = "rating">
 </div>
 <label for = "rating2"> <img src = "/assets/unclicked_2.png" width ="20" height = "20"> </label>
 
 <div class="ratings">
-<input type = "radio" id = "rating3" value = "3" name = "rating">
+<input type = "radio" id = "rating3" value = "⭐⭐⭐" name = "rating">
 </div>
 <label for = "rating3"> <img src = "/assets/unclicked_3.png" width ="20" height = "20"> </label>
 
 <div class="ratings">
-<input type = "radio" id = "rating4" value = "4" name = "rating">
+<input type = "radio" id = "rating4" value = "⭐⭐⭐⭐" name = "rating">
 </div>
 <label for = "rating4"> <img src = "/assets/unclicked_4.png" width ="20" height = "20"> </label>
 
 <div class="ratings">
-<input type = "radio" id = "rating5" value = "5" name = "rating">
+<input type = "radio" id = "rating5" value = "⭐⭐⭐⭐⭐" name = "rating">
 </div>
 <label for = "rating5"> <img src = "/assets/unclicked_5.png" width ="20" height = "20"> </label>
 
@@ -90,15 +90,19 @@
 
   <div class = "container">
      <p id = "movie" ></p>
+  
 </div>
  
     
     <script>
 
  var star1 = document.getElementById("rating1");
- document.getElementById("rating1").addEventListener("click", function(star1){
-star1.target.classList.toggle("clicked_star");
- });
+ star1.addEventListener("click", ChangefirstStar);
+function ChangefirstStar() {
+  document.getElementById("first_rating").src = "/assets/clicked_1.png";
+}
+
+
  var star2 = document.getElementById("rating2");
  var star3 = document.getElementById("rating3"); 
  var star4 = document.getElementById("rating4");
@@ -117,7 +121,11 @@ const movie_information = {};
       movie_information.genre = document.getElementById("genre").value;
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
 localStorage.setItem("info", JSON.stringify(movie_information));
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button onclick='deleteMovie()'> Delete </button>" + "<br>";
+document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button onclick='deleteMovie()'> Delete </button>" +  "<br>";
+ 
+      ;
+    
+
 
 
 function deleteMovie(){
