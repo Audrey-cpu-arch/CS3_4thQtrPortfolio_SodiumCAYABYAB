@@ -128,9 +128,30 @@ document.getElementById("movie").innerHTML += "<br>" +movie_information.title + 
         let starting_point = 0;
         let values_and_length = [];
         let length_of_array = values_and_length.length;
-        starting_point+=document.querySelector('input[name="rating"]:checked').value;
+        let values = document.querySelector('input[name="rating"]:checked').value;
+
+        if( values == "⭐"){
+          values = 1;
+        }
+        else if (values == "⭐⭐"){
+          values = 2;
+        }
+        else if (values == "⭐⭐⭐"){
+          values = 3;
+        }
+        else if (values == "⭐⭐⭐⭐"){
+          values = 4;
+        }
+        else if (values == "⭐⭐⭐⭐⭐"){
+          values = 5;
+        }
+
         values_and_length.push(starting_point);
-        let averaged = values_and_length/length_of_array;
+        for ( let i = 0; i <length_of_array;i++){
+          starting_point += values_and_length[i];
+        }
+        let averaged = starting_point/length_of_array;
+        console.log(averaged);
       }
 
 
