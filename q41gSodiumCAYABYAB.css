@@ -49,7 +49,7 @@ height: 60px;
 body{
   font-weight: bold;
   background-color: white;
-  
+  text-align: center;
 }
 
 #genre-label, #rating-label, #movie-title, #movie-year{
