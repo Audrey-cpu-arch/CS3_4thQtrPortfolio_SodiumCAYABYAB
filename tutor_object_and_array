@@ -7,6 +7,13 @@ Array
 - even multiple data type in the same array
 
 Object
+ - the keys can be strings
+   - even though they are strings they are still considered string
+   - the keys can be any values
+   - Ways to access properties: arr.propertyname or arr["propertyname"]
+   - the arr["propertyname"] still works even though the key isn't a string
+   - this is because it checks if they are the same value, not type
+   - you can put spaces in keys as long as they're strings otherwise you can't
  - to loop through an object use for..in
  - it's gauranteed to loop through everything
  - for (const key in object)
@@ -29,3 +36,5 @@ Object
    IF EACH KEY HAS AN OBJECT OF VALUES 
   - 1) use for...in
   - 2) use for...in
+
+  
