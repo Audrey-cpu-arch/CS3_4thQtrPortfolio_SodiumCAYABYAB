@@ -1,0 +1,31 @@
+Array
+- to loop through an array just use for loop
+- array indexes start from zero
+- to access values within an array use the index
+- example arr[0] gets the first value of the array "arr"
+- can store any kind of data, even objects
+- even multiple data type in the same array
+
+Object
+ - to loop through an object use for..in
+ - it's gauranteed to loop through everything
+ - for (const key in object)
+   - needs to be const not let
+   - let is a data type
+   - const is needed so the for loop can know what they're looping is a key
+   - using let can cause problems
+   - let will cause it to read it as a string instead of an object
+   - it will be unable to access anything
+
+- to loop through an object's propeties
+  - 1) loop through the object' keys first
+  - 2) loop through the values in their keys
+  
+  TO ACCESS VALUES IF:
+  IF EACH KEY HAS AN ARRAY OF VALUES 
+  - 1) use for...in
+  - 2) use for loop
+
+   IF EACH KEY HAS AN OBJECT OF VALUES 
+  - 1) use for...in
+  - 2) use for...in

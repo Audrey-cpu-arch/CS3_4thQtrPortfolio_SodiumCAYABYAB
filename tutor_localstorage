@@ -1,0 +1,19 @@
+localStorage only saves data in strings which is why we JSON.stringify it first
+java
+
+localStorage.getItem gets the key's value
+the value of localStorage.getItem by default is a string
+JSON.parse is an automatic translator --> if the stringified value was orginally an array it will turn it into an array or it was originally an object it will turn it into an object
+
+
+to save:
+localStorage.setItem(key, JSON.stringify(value of key));
+if the value is already a string there is no need for JSON.stringify
+Everything else must be converted
+
+
+localStorage.deleteItem(key)
+deletes only the values of the key
+
+localStorage.clear()
+deletes all data within the local storage

@@ -1,0 +1,38 @@
+5 positions:
+1) static
+   - basic
+   - default position
+   - whatever position it has it remains there
+   - example is <p> so wherever they are they stay there
+   - isn't affected by changes in  psotioning in css example: 100px and etc
+2) relative
+   - position can be edited like example 30px
+   - moves from its original position
+   - it moves but the leemnts surrounding it don't move
+   - it can cover elements
+   - the website thinsk the box is still there, but the relative shows it that it's a certain number of units away from its roginal position
+   - changes relative to its orignal psition
+   - if it was in a certainpsotion and you put top: 100px it will move 100 px from the top away from its orginal psotion
+   - isn't removed from document flow
+   - its postioning doesn't affect the position of others
+   - YOU CAN CHANGE ITS POSITION WITHOUT AFFECTING OTHER CONTAINERS
+
+   3) absolute
+   - rmeoved from docuemnt flow
+   - psotioned to nearst non-static container
+   - bottom:20px means nearest non-static container
+   - absolute is liek relative but it postions the nearest non-static container
+   - its positioning affects the position of others
+
+   4) fixed
+   - stays in the same position no matter what
+   - if you scroll up and down it will always remain them
+   - affects position fo toher elements around it
+
+   5) sticky
+   - like relative
+   - it follows you if you scroll up or down before going back to its orignal psotion
+static, absolute, and fixed affect the document flow
+
+relative and sticky 
+   
