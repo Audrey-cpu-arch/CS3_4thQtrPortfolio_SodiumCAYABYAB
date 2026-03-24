@@ -103,8 +103,8 @@
   if (confirm("Are you sure you want to delete this movie?") === true) {  
      
 
-  
-      localStorage.removeItem("info");
+     let deletion = JSON.parse(localStorage.getItem("info"));
+      console.log(deletion);
       document.getElementById("movie").innerHTML = " ";
       
       
