@@ -164,7 +164,7 @@ document.getElementById("movie").innerHTML += "<br>" +movie_information.title + 
 
       };
     
-                    function deleteMovie(){
+                    function deleteMovie(index){
   if (confirm("Are you sure you want to delete this movie?") === true) {  
   let to_be_deleted = JSON.parse(localStorage.getItem("info"));
   // I have to make a process that gets the movie and values of the movie you are deleting
