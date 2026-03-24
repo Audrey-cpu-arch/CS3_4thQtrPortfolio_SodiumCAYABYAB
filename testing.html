@@ -96,75 +96,38 @@
     
     <script>
 
-      
+    function averageRating(){
+      let startingPoint = 0;
+      let values = JSON.parse(localStorage.getItem("info"));
+      for(let i = 0; i < values.length; i++){
+        if( values[i].rating == "⭐"){
+                values[i].rating = 1;
+                  startingPoint += values[i].rating;
+              }
+              else if (values[i].rating == "⭐⭐"){
+                values[i].rating = 2;
+                  startingPoint += values[i].rating;
+              }
+              else if (values[i].rating == "⭐⭐⭐"){
+                values[i].rating = 3;
+                  startingPoint += values[i].rating;
+              }
+              else if (values[i].rating == "⭐⭐⭐⭐"){
+                values[i].rating = 4;
+                  startingPoint += values[i].rating;
+              }
+              else if (values[i].rating == "⭐⭐⭐⭐⭐"){
+                values[i].rating = 5;
+                startingPoint += values[i].rating;
+      }
 
-  //     function averageRating(){
-  //      let values = document.querySelector('input[name="rating"]:checked').value;
-  // if( values == "⭐"){
-  //         values = 1;
-  //       }
-  //       else if (values == "⭐⭐"){
-  //         values = 2;
-  //       }
-  //       else if (values == "⭐⭐⭐"){
-  //         values = 3;
-  //       }
-  //       else if (values == "⭐⭐⭐⭐"){
-  //         values = 4;
-  //       }
-  //       else if (values == "⭐⭐⭐⭐⭐"){
-  //         values = 5;
-  //       }
-
-  //        let values_and_length = [];
-  //       values_and_length.push(values);
-
-  //        let starting_point = 0;
-  //       for ( let i = 0; i <values_and_length.length;i++){
-  //         starting_point += values_and_length[i];
-  //       }
-  //       let averaged = starting_point/values_and_length.length;
-      
-  //      localStorage.setItem("average", JSON.stringify(averaged));
-
-  //     }
-
-
-
-
-
-    function averageRating(movie_rating){
-       let values = document.querySelector('input[name="rating"]:checked').value;
-  if( values == "⭐"){
-          values = 1;
         }
-        else if (values == "⭐⭐"){
-          values = 2;
-        }
-        else if (values == "⭐⭐⭐"){
-          values = 3;
-        }
-        else if (values == "⭐⭐⭐⭐"){
-          values = 4;
-        }
-        else if (values == "⭐⭐⭐⭐⭐"){
-          values = 5;
-        }
-
-
-
-        let values_and_length = JSON.parse(localStorage.getItem("average_stars")) || [];
-      values_and_length.push(values);
-       values_and_length.push(movie_rating);
-         let starting_point = 0;
-        for ( let i = 0; i <values_and_length.length;i++){
-          starting_point += values_and_length[i];
-        }
-        let averaged = starting_point/values_and_length.length;
+      let averaged = startingPoint/values.length;
       
        localStorage.setItem("average_stars", JSON.stringify(averaged));
-
+       
       }
+
 
 
 
@@ -172,30 +135,16 @@
 
 
       function addMovie (){
-
-        
 const movie_information = {};
       movie_information.title = document.getElementById("movie title").value;
       movie_information.year = document.getElementById("year").value;
       movie_information.genre = document.getElementById("genre").value;
       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
-
       let  information = JSON.parse(localStorage.getItem("info")) || [];
       information.push(movie_information);
       localStorage.setItem("info", JSON.stringify(information)); 
-
-     
-     
-
+      averageRating();
 document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie' onclick = 'deleteMovie()'> Delete </button>" +  "<br>";
-
-     
-
-averageRating(movie_information.rating);
-
-
-
-
 
 }
       
