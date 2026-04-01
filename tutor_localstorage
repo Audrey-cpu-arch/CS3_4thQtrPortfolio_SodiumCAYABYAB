@@ -17,3 +17,26 @@ deletes only the values of the key
 
 localStorage.clear()
 deletes all data within the local storage
+////////////////////////////////////////
+
+localStorage saves info such that even though you exit the browser it's still saved
+
+
+four main function:
+-get (gets the key's value)
+-set (updates the key's value)
+-delete (removes the key itself and only the key)
+- clear (removes everything in localStorage)
+
+- data in localStorage can be anything that's stringified
+- data in localStorage can only be stored as strings
+
+const variables aren't updatable nor redeclarable
+const variables once declared will always have the same value
+
+objects can be declared as let
+when declared as const:
+- the values of its keys can be modified but the keys themselves can't be modified
+
+when declared as let:
+-  both the keys and the values of its keys can be modified

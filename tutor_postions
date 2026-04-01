@@ -34,5 +34,31 @@
    - it follows you if you scroll up or down before going back to its orignal psotion
 static, absolute, and fixed affect the document flow
 
-relative and sticky 
+
+//////////////
+Relative
+- not removed from document flow
+- moves away form orginal position
+
+Absolute
+- removed from document flow
+- positions itself to the nearest non-static container
+
+Absolute and fixed are both removed from the document flow, fixed stays on the viewport while absolute remains in the same position and isn't permanently fixed on the viewport.
+
+Sticky
+-  not removed from document flow
+- when scrolled on will stick to a certain position if it is in the code
    
+   CSS prioritizes top and left
+   Sticky doesn't prioritize anything
+
+   higher z-index value = more forward it is
+   (kinda like canva)
+   the default z-index of elements in html is 0
+
+   child containers automatically inherit the z-index of their parent container
+
+   anything inside a container is the child of the container
+   example: the child of body is everything inside it
+   another example: the child of div is the box in it

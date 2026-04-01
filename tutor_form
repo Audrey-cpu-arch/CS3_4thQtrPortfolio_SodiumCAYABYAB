@@ -1,0 +1,27 @@
+label for
+- javascript accesses the input element from id
+- html accesses the input element from label for
+- if the id and label for match they get the same value
+
+radio
+- the values of radio are usually accessed through the name
+- in javascript you get it using querySelector
+- only allows one choice to be chosen
+
+checkbox
+- allows multiple choices to be chosen
+- to check if it was check you can use the document.GetElementById and a property called "checked" which can do soemthing based on you code
+- - - example:
+let variable = document.getElementById("id");
+variable.checked
+- you can access it through name
+- id or name are used for checkboxes, but id is unique for one element
+
+id
+- unqiue per elemnet
+
+name 
+- classification for elements
+- can be used for checkboxes and radio buttons to make things quicker and easier
+
+for other form inputs that are individual you cna getelemntBYId since you are getting only one value, but if you wanna check multiple choices you can either use query selector for radio and getelemntbyname for checkboxes.
