@@ -96,44 +96,10 @@
     
     <script>
 
-      
-
-    
-
-
-
-
-      
-
-
-      function addMovie (){
-const movie_information = {};
-      movie_information.title = document.getElementById("movie title").value;
-      movie_information.year = document.getElementById("year").value;
-      movie_information.genre = document.getElementById("genre").value;
-      movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
-
-      let  information = JSON.parse(localStorage.getItem("info")) || [];
-      information.push(movie_information);
-      localStorage.setItem("info", JSON.stringify(information)); 
-
-     
-     
-
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie' onclick = 'deleteMovie()'> Delete </button>" +  "<br>";
-
- 
-      
-
-
-
-
-
-
-
-
-let values = document.querySelector('input[name="rating"]:checked').value;
+function getAverage(){
+        let values = document.querySelector('input[name="rating"]:checked').value;
         let values_and_length = JSON.parse(localStorage.getItem("average")) || [];
+        values_and_length.push(values);
         let length_of_array = values_and_length.length;
        
 
@@ -152,7 +118,7 @@ let values = document.querySelector('input[name="rating"]:checked').value;
         else if (values == "⭐⭐⭐⭐⭐"){
           values = 5;
         }
-        values_and_length.push(values);
+        
 
          let starting_point = 0;
         for ( let i = 0; i <length_of_array;i++){
@@ -160,10 +126,34 @@ let values = document.querySelector('input[name="rating"]:checked').value;
         }
 
 
-
         let averaged = starting_point/length_of_array;
       
        localStorage.setItem("average", JSON.stringify(averaged));
+      }
+
+
+
+      
+
+
+      function addMovie (){
+        getAverage();
+const movie_information = {};
+      movie_information.title = document.getElementById("movie title").value;
+      movie_information.year = document.getElementById("year").value;
+      movie_information.genre = document.getElementById("genre").value;
+      movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
+
+      let  information = JSON.parse(localStorage.getItem("info")) || [];
+      information.push(movie_information);
+      localStorage.setItem("info", JSON.stringify(information)); 
+
+     
+     
+
+document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie' onclick = 'deleteMovie()'> Delete </button>" +  "<br>";
+
+ 
 
 
         //for getting the average based on stars
