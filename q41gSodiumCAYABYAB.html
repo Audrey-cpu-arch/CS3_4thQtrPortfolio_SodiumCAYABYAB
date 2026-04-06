@@ -100,7 +100,7 @@ function getAverage(){
         let values = document.querySelector('input[name="rating"]:checked').value;
         let values_and_length = JSON.parse(localStorage.getItem("average")) || [];
         
-        let length_of_array = values_and_length.length;
+        
        
 
   if( values == "⭐"){
@@ -120,6 +120,7 @@ function getAverage(){
         }
         
 values_and_length.push(values);
+let length_of_array = values_and_length.length;
          let starting_point = 0;
         for ( let i = 0; i <length_of_array;i++){
           starting_point += values_and_length[i];
