@@ -98,10 +98,7 @@
 
 function getAverage(){
         let values = document.querySelector('input[name="rating"]:checked').value;
-        let values_and_length = JSON.parse(localStorage.getItem("average")) || [];
-        
-        
-       
+        let values_and_length = JSON.parse(localStorage.getItem("arrei")) || [];
 
   if( values == "⭐"){
           values = 1;
@@ -119,6 +116,8 @@ function getAverage(){
           values = 5;
         }
         
+
+        
 values_and_length.push(values);
 let length_of_array = values_and_length.length;
          let starting_point = 0;
@@ -126,9 +125,9 @@ let length_of_array = values_and_length.length;
           starting_point += values_and_length[i];
         }
 
-
+        
         let averaged = starting_point/length_of_array;
-      
+       localStorage.setItem("arrei", JSON.stringify(values_and_length));
        localStorage.setItem("average", JSON.stringify(averaged));
       }
 
