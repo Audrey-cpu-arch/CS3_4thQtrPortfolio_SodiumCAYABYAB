@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -149,17 +148,13 @@ const movie_information = {};
       information.push(movie_information);
       localStorage.setItem("info", JSON.stringify(information)); 
 
-    //  let index_of_movie_to_be_deleted = 0;
+     let index_of_movie_to_be_deleted = information.indexOf(movie_information);
      
-
-document.getElementById("movie").innerHTML += "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie' onclick = 'deleteMovie()'> Delete </button>" +  "<br>";
-
- 
-
-
-        //for getting the average based on stars
+const output_movie_on_page = document.createElement("p");
+output_movie_on_page.innerHTML = "<br>" +movie_information.title + " "+ "("  + movie_information.year + ")" + " " + "-" + " " +movie_information.genre +  ",Rating:" + movie_information.rating + " " + " " + "<button id='deleteMovie' onclick = 'deleteMovie(" + index_of_movie_to_be_deleted + ", "+output_movie_on_page+")'> Delete </button>" +  "<br>";
+document.getElementById("movie").appendChild(output_movie_on_page);
         
-         };
+ };
        
 
         
@@ -177,20 +172,25 @@ function staytheSame(){
 }
     
     
-                    function deleteMovie(){
+                    function deleteMovie(deleted,cleared_from_list){
   if (confirm("Are you sure you want to delete this movie?") === true) {  
   let to_be_deleted = JSON.parse(localStorage.getItem("info"));
   // I have to make a process that gets the movie and values of the movie you are deleting
   // Find the index of the movie
-  // Create a new version of the array without the delted movie (splice)
+  // Create a new version of the array without the deleted movie (splice)
   // Save the new version into local storage as the new value of the key "info"
   
-  localStorage.removeItem("info");
-   
-     
-      
+  let must_delete = to_be_deleted.indexOf(deleted,0);
+  to_be_deleted.splice(must_delete,1);
+localStorage.setItem("info", JSON.stringify(to_be_deleted));
+document.getElementById("movie").removeChild(cleared_from_list);
+    
+      //press delete it will find the name of the one to be deleted then match
+      // good idea is to make sperate li parts
       
 }};
+
+
 
     </script>
   </body>
