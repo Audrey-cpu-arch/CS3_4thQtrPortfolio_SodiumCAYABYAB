@@ -16,6 +16,7 @@
    - isn't removed from document flow
    - its postioning doesn't affect the position of others
    - YOU CAN CHANGE ITS POSITION WITHOUT AFFECTING OTHER CONTAINERS
+   - changes position on the viewport not the document flow
 
    3) absolute
    - rmeoved from docuemnt flow
