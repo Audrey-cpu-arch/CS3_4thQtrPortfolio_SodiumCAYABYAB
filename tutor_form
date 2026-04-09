@@ -1,7 +1,8 @@
 label for
 - javascript accesses the input element from id
 - html accesses the input element from label for
-- if the id and label for match they get the same value
+- if the id and label for match they get the same value and effects
+- for aesthetics
 
 radio
 - the values of radio are usually accessed through the name
@@ -25,3 +26,29 @@ name
 - can be used for checkboxes and radio buttons to make things quicker and easier
 
 for other form inputs that are individual you cna getelemntBYId since you are getting only one value, but if you wanna check multiple choices you can either use query selector for radio and getelemntbyname for checkboxes.
+
+you can use "document.getElementById" for getting the inputs from text
+you can use "document.getElementByName" for checkboxes
+
+3 types of buttons:
+utton -  sets a normal buttons and i usually paired with a function
+submit - submits the data into another file (a php file to be specific)
+reset - resets form fields, all previous progress from the forms are gone
+
+action
+- shows where the data will be sent for processing
+- can't be done through html
+- the file is linked there
+
+method
+- method used to send the data to the file linked in "action"
+
+2 types of method:
+get
+- default
+- send data to the url pf the file or server for processing
+- when html sends the data to the server site, it sends it as it is
+
+post 
+- data is hidden from connection
+- data is encrypted such that when the data reaches the server that is when the data becomes understandable

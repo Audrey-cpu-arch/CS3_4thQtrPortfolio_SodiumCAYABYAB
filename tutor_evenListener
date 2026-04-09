@@ -1,0 +1,11 @@
+- addEventListener does soemthing when you interact with something on the page
+- it is similar to onclick, when a condition or action is fulfilled a function is executed
+
+format:
+document.getElementById(element id).addEventListener("type of event listener", function name);
+function "function name" (){
+}
+
+types of event listener
+- click
+- mousemove (when you hover over something)
