@@ -23,6 +23,7 @@ Object
    - using let can cause problems
    - let will cause it to read it as a string instead of an object
    - it will be unable to access anything
+   - key-value pairings
 
 - to loop through an object's propeties
   - 1) loop through the object' keys first

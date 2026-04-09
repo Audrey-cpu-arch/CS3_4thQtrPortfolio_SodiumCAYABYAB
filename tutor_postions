@@ -34,6 +34,7 @@
    - like relative
    - it follows you if you scroll up or down before going back to its orignal psotion
 static, absolute, and fixed affect the document flow
+   
 
 
 //////////////
@@ -63,3 +64,5 @@ Sticky
    anything inside a container is the child of the container
    example: the child of body is everything inside it
    another example: the child of div is the box in it
+
+   higher z-index = the more forward t goes
