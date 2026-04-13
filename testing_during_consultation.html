@@ -132,6 +132,8 @@ let length_of_array = values_and_length.length;
       }
 
 
+
+       
 function displayMovies(){
   let movies = JSON.parse(localStorage.getItem("info")) || [];
   document.getElementById("movie").innerHTML = "";
@@ -153,22 +155,21 @@ function displayMovies(){
       
 
 
-//       function addMovie (){
-//         getAverage();
-//          displayMovies();
-// // const movie_information = {};
-// //       movie_information.title = document.getElementById("movie title").value;
-// //       movie_information.year = document.getElementById("year").value;
-// //       movie_information.genre = document.getElementById("genre").value;
-// //       movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
+      function addMovie (){
+        getAverage();
+const movie_information = {};
+      movie_information.title = document.getElementById("movie title").value;
+      movie_information.year = document.getElementById("year").value;
+      movie_information.genre = document.getElementById("genre").value;
+      movie_information.rating = document.querySelector('input[name="rating"]:checked').value;
 
-//       let  information = JSON.parse(localStorage.getItem("info")) || [];
-//       information.push(movie_information);
-//       localStorage.setItem("info", JSON.stringify(information)); 
-
-//      let index_of_movie_to_be_deleted = information.indexOf(movie_information);
+      let  information = JSON.parse(localStorage.getItem("info")) || [];
+      information.push(movie_information);
+      localStorage.setItem("info", JSON.stringify(information)); 
+      displayMovies();
+  
         
-//  };
+ };
        
 
         
