@@ -194,9 +194,9 @@ const movie_information = {};
   let movies = JSON.parse(localStorage.getItem("info"));
   movies.splice(index, 1);
   localStorage.setItem("info",JSON.stringify(movies));
+    displayMovies();
   getAverage();
-  displayMovies();
-  
+
 
 //   // I have to make a process that gets the movie and values of the movie you are deleting
 //   // Find the index of the movie
