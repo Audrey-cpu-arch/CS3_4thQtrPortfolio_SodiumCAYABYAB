@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="q41gSodiumCAYABYAB.css" />
+  </head>
+  <body>
+    <h1>Add a Movie</h1>
+
+    <div id="movie-title">
+      <p>Title:</p>
+      <input id="movie_title" type="text" />
+    </div>
+
+    <div id="movie-year">
+      <p>Year:</p>
+      <input id="year" type="number" />
+    </div>
+
+    <div id="genre-label">
+      <p>Genre:</p>
+      <select id="genre" required>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Horror">Horror</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Western">Western</option>
+        <option value="Sports">Sports</option>
+        <option value="Musical">Musical</option>
+        <option value="Other">Other genre that isn't mentioned in the list</option>
+      </select>
+    </div>
+
+    <div id="rating-label">
+      <p>Rating:</p>
+
+      <div class="ratings">
+        <input type="radio" id="rating1" value="⭐" name="rating" />
+      </div>
+
+      <label for="rating1" id="first_rating" onclick="ChangefirstStar()">
+        <img src="/assets/unclicked_1.png" width="20" height="20" />
+      </label>
+
+      <div class="ratings">
+        <input type="radio" id="rating2" value="⭐⭐" name="rating" />
+      </div>
+      <label for="rating2">
+        <img src="/assets/unclicked_2.png" width="20" height="20" />
+      </label>
+
+      <div class="ratings">
+        <input type="radio" id="rating3" value="⭐⭐⭐" name="rating" />
+      </div>
+      <label for="rating3">
+        <img src="/assets/unclicked_3.png" width="20" height="20" />
+      </label>
+
+      <div class="ratings">
+        <input type="radio" id="rating4" value="⭐⭐⭐⭐" name="rating" />
+      </div>
+      <label for="rating4">
+        <img src="/assets/unclicked_4.png" width="20" height="20" />
+      </label>
+
+      <div class="ratings">
+        <input type="radio" id="rating5" value="⭐⭐⭐⭐⭐" name="rating" />
+      </div>
+      <label for="rating5">
+        <img src="/assets/unclicked_5.png" width="20" height="20" />
+      </label>
+    </div>
+
+    <input type = 'radio' id = 'radio_rating' value = 'rating' name = 'rating'>
+    <label for = 'radio_rating'> Rating </label>
+     <input type = 'radio' id = 'radio_title' value = 'title' name = 'rating'>
+    <label for = 'radio_title'> Title </label>
+      <input type = 'radio' id = 'radio_year' value = 'year' name = 'rating'>
+    <label for = 'radio_year'> Year </label>
+
+    <button onclick="addMovie()" class="button">Add Movie</button> <br>
+    
+
+
+    <div id="movie">
+      <h2>Movie List</h2>
+    </div>
+
+    <div class="container">
+      <p id="movie"></p>
+    </div>
+
+    <script>
+
+    let radio_choice = document.querySelector('input[name="rating"]:checked').value;
+    if(radio_choice == "rating"){
+        let arrey = JSON.parse(localStorage.getItem("info"));
+        let temp = 0;
+
+        for (let i = 0; i < arrey.length; i++){
+           if(arrey[i].rating > temp) {
+             temp = arrey[i].rating;
+           }
+        }
+    }
+    else if(radio_choice == "title"){
+      let array = JSON.parse(localStorage.getItem("info"));
+      array.sort();
+        localStorage.setItem("info", JSON.stringify(array));
+        displayMovies();
+    }
+    else if(radio_choice == "year"){
+        JSON.parse(localStorage.getItem("info"));
+    }
+
+
+
+
+
+      var star1 = document.getElementById("rating1");
+      star1.addEventListener("click", ChangefirstStar);
+      function ChangefirstStar() {
+        document.getElementById("first_rating").src = "/assets/clicked_1.png";
+      }
+
+      var star2 = document.getElementById("rating2");
+      var star3 = document.getElementById("rating3");
+      var star4 = document.getElementById("rating4");
+      var star5 = document.getElementById("rating5");
+
+      // added separate displayMovies function for easier access
+      function displayMovies() {
+        document.getElementById("movie").innerHTML = "";
+        let array_of_movies = JSON.parse(localStorage.getItem("info")) || [];
+        // Loop through all keys in localStorage
+        for (let i = 0; i < array_of_movies.length; i++) {
+          // Only display movies (skip other keys if any)
+          let m = array_of_movies[i];
+          if (m && m.title && m.year && m.genre && m.rating) {
+            // for the delete button to work, per movie already has an identifier by its movie title
+            document.getElementById("movie").innerHTML += `<br>${m.title} (${m.year}) - ${m.genre}, Rating: ${m.rating} <button onclick='deleteMovie("${i}")'>Delete</button><br>`;
+          }
+        }
+      }
+
+      function deleteMovie(index) {
+        if (confirm("Are you sure you want to delete this movie?") === true)
+        {let array_of_movies = JSON.parse(localStorage.getItem("info"));
+          // 1. splice array_of_movies through index
+          // 2. update localStorage: key "info"
+          array_of_movies.splice(index, 1);
+          localStorage.setItem("info", JSON.stringify(array_of_movies));
+          displayMovies();
+        }
+      }
+
+      function addMovie() {
+        const movie_information = {};
+        movie_information.title = document.getElementById("movie_title").value;
+        movie_information.year = Number(document.getElementById("year").value);
+        movie_information.genre = document.getElementById("genre").value;
+        movie_information.rating = document.querySelector(
+          'input[name="rating"]:checked'
+        ).value;
+
+        let array_of_movies = JSON.parse(localStorage.getItem("info")) || [];
+        array_of_movies.push(movie_information);
+        localStorage.setItem("info", JSON.stringify(array_of_movies));
+        displayMovies();
+      }
+      let values_and_length = [];
+      let length_of_array = values_and_length.length;
+      let values = document.querySelector('input[name="rating"]:checked').value;
+
+      if (values == "⭐") {
+        values = 1;
+      } else if (values == "⭐⭐") {
+        values = 2;
+      } else if (values == "⭐⭐⭐") {
+        values = 3;
+      } else if (values == "⭐⭐⭐⭐") {
+        values = 4;
+      } else if (values == "⭐⭐⭐⭐⭐") {
+        values = 5;
+      }
+
+      values_and_length.push(values);
+
+      let starting_point = 0;
+      for (let i = 0; i < length_of_array; i++) {
+        starting_point += values_and_length[i];
+      }
+      let averaged = starting_point / length_of_array;
+
+      localStorage.setItem("average", JSON.stringify(averaged));
+    </script>
+  </body>
+</html>
