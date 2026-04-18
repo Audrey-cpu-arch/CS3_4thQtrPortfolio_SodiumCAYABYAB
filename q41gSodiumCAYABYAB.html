@@ -81,6 +81,7 @@
 
 
  <button onclick="addMovie()" class = "button" >Add Movie</button>
+  <button onclick="clearList()" class = "button" >Clear List</button>
 
 
  <div id = "movie-list">
@@ -213,7 +214,11 @@ const movie_information = {};
       
 }};
 
-
+function clearList(){
+  if (confirm("Are you sure you want to delete this movie?") === true) { 
+  localStorage.clear();}
+  displayMovies();
+};
 
     </script>
   </body>
